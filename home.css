@@ -1,0 +1,61 @@
+/*
+Jonathan Walker Assignment 3
+*/
+
+html{
+    background-color: maroon;
+}
+
+body{
+    background-color: aqua;
+}
+
+div.navigation_bar{
+    background-color: yellow;
+    padding: 15%;
+}
+
+div.Introduction,div.Assignment,div.Portfolio,div.Contact_information{
+    color: hsla(28, 25%, 90%, .75);
+}
+
+div.class_schedule{
+    color: rgba(218, 149, 129, 0.5);
+}
+
+header h1{
+    background-color: silver;
+}
+
+footer{
+    color: maroon;
+}
+
+/* Layout */
+
+div.navigation_bar,div.Introduction,footer{
+    position: fixed;
+}
+
+header h1{
+    position: relative;
+}
+
+aside.sidebar{
+    position: left;
+}
+
+div.Assignment{
+    position: absolute;
+}
+
+div.class_schedule{
+    position: relative;
+    padding: 20%;
+}
+
+/* Font */
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
