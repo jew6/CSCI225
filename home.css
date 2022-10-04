@@ -3,7 +3,7 @@ Jonathan Walker Assignment 3
 */
 
 html{
-    background-color: maroon;
+    background-image: linear-gradient(maroon, black)
 }
 
 body{
@@ -15,12 +15,15 @@ div.navigation_bar{
     padding: 15%;
 }
 
-div.Introduction,div.Assignment,div.Portfolio,div.Contact_information{
-    color: hsla(28, 25%, 90%, .75);
+div.Introduction,div.Assignment,div.Portfolio,div.Contact-information{
+    color: rgba(26, 13, 2, 0.75);
+    border: hsla(70, 45%, 65%, .75);
 }
 
-div.class_schedule{
+div.class-schedule{
+    float: left;
     color: rgba(218, 149, 129, 0.5);
+    border: rgba(250, 150, 50, .25);
 }
 
 header h1{
@@ -33,29 +36,97 @@ footer{
 
 /* Layout */
 
-div.navigation_bar,div.Introduction,footer{
+div.navigation-bar,footer{
     position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: none;
+}
+
+div.Introduction{
+    position: relative;
 }
 
 header h1{
     position: relative;
+    
 }
 
 aside.sidebar{
-    position: left;
+    position: relative;
 }
 
 div.Assignment{
-    position: absolute;
+    position: relative;
 }
 
-div.class_schedule{
+div.class-schedule{
     position: relative;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
     padding: 20%;
 }
 
+div.Portfolio{
+    position: relative;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+div.Contact-information{
+    position: relative;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
 /* Font */
 
 body{
     font-family: 'Times New Roman', Times, serif;
+    font-weight: 50;
+}
+
+#navigation-bar{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: silver;
+}
+
+#navigation-bar ul li{
+    display: inline-block;
+    list-style: none;
+}
+
+#navigation-bar h1{
+    display: none;
+}
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1em;
+}
+p{
+    line-height: 1em;
+    text-align: left;
+}
+
+/* hover */
+
+p:hover{
+    border: hsla(0, 65%, 40%, .9) 5px solid;
+}
+
+h1:hover{
+    transform: scale(.5);
+}
+
+/* Transform */
+
+p::first-letter{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+    color: gold;
 }
