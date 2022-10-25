@@ -1,0 +1,60 @@
+<!--Jonathan Walker Assignment 4-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BMI Calculator</title>
+    </head>
+    <body>
+        <div class="calculate">
+            <h1>Welcome to the BMI calculator</h1>
+            <p>Please enter your name</p>
+            <input type="name" name="name" placeholder="John Smith" required>
+            <p>Please enter your age</p>
+            <p>If you are under 20, remember to use the BMI percentage chart provided by the CDC
+                <a href="https://www.cdc.gov/growthcharts/data/set1clinical/cj41l023.pdf">CDC BMI chart</a>
+            </p>
+            <input class="age" type="text">
+            <p>Please enter your weight (pounds)</p>
+            <input class = "weight-input" type="text">
+            <p>Please enter your height (inches)</p>
+            <input class = "height-input" type="text"><br>
+            <button class="calculate">Compute BMI</button>
+
+            <h2 class="result">Result</h2>
+            <p class="statement"></p>
+
+            <script>
+                var patientAge = document.querySelector(".age");
+                var patientHeight = document.querySelector(".height-input");
+                var patientWeight = document.querySelector(".weight-input");
+                var calculation = document.querySelector(".calculate");
+                var result = document.querySelector(".result");
+                var statement = document.querySelector(".statement");
+                
+                var age = patientAge.value;
+                if(age <= 20){
+                        statement.innerHTML = "Be sure to use the BMI percentage chart provided by the CDC\nhttps://www.cdc.gov/growthcharts/data/set1clinical/cj41l023.pdf";
+                    }
+                    calculation.addEventListener("click", ()=>{
+                    
+                    var height = patientHeight.value;
+                    var weight = patientWeight.value;
+                    var BMI = weight*703/height**2;
+                    result.innerHTML=BMI;
+
+                    
+
+                    if(BMI < 18.5){
+                        statement.innerText = "Your BMI falls within the underweight range";    
+                    }else if((BMI > 18.5) && (BMI < 24.9)){
+                        statement.innerText = "Your BMI falls within the normal or healthy weight range";
+                    }else if((BMI > 25) && (BMI < 27.9 )){
+                        statement.innerText = "Your BMI falls within the overweight range";
+                    }else{
+                        statement.innerText = "Your BMI falls within the obese range\n Here is a link a guide from the CDC to control wieight\nhttp://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm ";
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>
