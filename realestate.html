@@ -1,0 +1,45 @@
+<!-- Jonathan Walker Assignment 5-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Real Estate Calculator</title>
+    </head>
+    <style>
+        body{
+            background-image: url('Estate.jpg');
+        }
+    </style>
+    <body>
+        <div class="houseLoan">
+            <h1 style="color: white;">Loan Information</h1>
+            <p style="color: white;"> Loan Amount: $<input class="loan" type="text"></p>
+            <p style="color: white;"> Interest Rate: <input class="rate" type="text">%</p>
+            <p style="color: white;"> Loan Term: <input class="years" type="text"> years</p>
+            <p style="color: white;">Start Date: <input class="start" type="date"></p>
+            <button class="calculate">Calculate</button>
+
+            <h2 class="payment" style="color: white;">Payment Table</h2>
+            <p class="statement" style="color: white;"></p>
+
+            <script>
+                var loanAmount = document.querySelector(".loan");
+                var loanInterest = document.querySelector(".rate");
+                var loanTerm = document.querySelector(".years");
+                var loanStart = document.querySelector(".start");
+                var loanPayment = document.querySelector(".payment");
+                var loanStatement = document.querySelector(".statement");
+
+                var calculate = document.querySelector(".calculate");
+                calculate.addEventListener("click", ()=>{
+                    var months = loanTerm.value*12;
+                    var balance;
+                    var monthlyInterest = loanInterest.value/12;
+                    var monthlyPayment = loanAmount.value*(monthlyInterest)/(1-(1+monthlyInterest)**(-months));
+                    var interestMonthPay = balance*monthlyInterest;
+                    var principle = monthlyPayment-interestMonthPay;
+                    loanStatement.innerHTML = "Monthly Payment: $"+monthlyPayment;
+                });
+            </script>
+        </div>
+    </body>
+</html>
